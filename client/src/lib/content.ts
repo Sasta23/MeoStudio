@@ -153,11 +153,10 @@ export const aboutContent = {
  * Update with your actual contact details
  */
 export const contactInfo = {
-  email: 'sanderman',
+  email: 'sanderman2003@gmail.com',
   phone: '+45 40 40 40 40',
   location: 'Odense, Danmark',
   instagram: 'https://instagram.com',
-  vimeo: 'https://vimeo.com',
   linkedin: 'https://linkedin.com',
 };
 
