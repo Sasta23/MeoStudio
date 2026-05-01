@@ -55,7 +55,7 @@ export default function Navigation() {
             }}
             className="text-xl font-bold text-primary transition-colors hover:text-primary/80"
           >
-            Kinematisk
+            Meo Studio
           </a>
 
           {/* Desktop Navigation */}

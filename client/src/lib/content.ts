@@ -168,7 +168,7 @@ export const contactInfo = {
  */
 export const heroContent = {
   headline: 'Meo Studio',
-  tagline: 'Premium videoproduktion for mærker, der kræver excellence',
+  tagline: 'Premium videoproduktion for produkter, der kræver excellence',
   ctaPrimary: 'Se Mit Arbejde',
   ctaSecondary: 'Kontakt Mig',
 };
