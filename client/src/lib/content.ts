@@ -153,11 +153,12 @@ export const aboutContent = {
  * Update with your actual contact details
  */
 export const contactInfo = {
-  email: 'sanderman2003@gmail.com',
-  phone: '+45 40 40 40 40',
+  email: 'MeoStudioDK.gmail.com',
+  phone: '+45 20 93 60 09',
   location: 'Odense, Danmark',
-  instagram: 'https://instagram.com',
+  instagram: 'https://www.instagram.com/meostudiodk/',
   linkedin: 'https://linkedin.com',
+  tiktok : 'https://www.tiktok.com/@mheo722'
 };
 
 /**
@@ -184,9 +185,9 @@ export const socialLinks: SocialLink[] = [
     icon: 'instagram',
   },
   {
-    platform: 'Vimeo',
-    url: contactInfo.vimeo,
-    icon: 'vimeo',
+    platform: 'Tik Tok',
+    url: contactInfo.tiktok,
+    icon: 'tiktok',
   },
   {
     platform: 'LinkedIn',

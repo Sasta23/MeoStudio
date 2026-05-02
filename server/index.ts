@@ -16,26 +16,31 @@ async function startServer() {
   app.use(express.json());
 
   // Initialisér Resend med din API-nøgle
-  const resend = new Resend('re_E9DwzQUz_8Cn5YYZzh1ercPSRecxoBKxg');
+  const resend = new Resend('re_fPEATS8m_5CiToLfueC57msxUZqjp8A7A');
 
   // Definer stien til de statiske filer (frontend)
   const distPath = path.resolve(__dirname, "..", "dist", "public");
 
-  // POST ROUTE: Denne modtager data fra din formular
+  // ✅ FIXED ROUTE
   app.post("/api/contact", async (req, res) => {
-    const { email, subject, message } = req.body;
+    const { name, email, subject, message } = req.body;
 
-    console.log("Modtaget anmodning om at sende mail fra:", email);
+    console.log("Modtaget data:", req.body);
 
     try {
       await resend.emails.send({
         from: 'Meo Studio <onboarding@resend.dev>',
-        to: 'sanderman2003@gmail.com',
-        subject: `Ny besked fra portfolio: ${subject}`,
+        to: 'meostudiodk@gmail.com',
+        subject: `Ny besked: ${subject}`,
         html: `
-          <h3>Ny besked modtaget via din hjemmeside</h3>
-          <p><strong>Afsender:</strong> ${email}</p>
+          <h2>Ny besked fra din hjemmeside 🚀</h2>
+
+          <p><strong>Navn:</strong> ${name}</p>
+          <p><strong>Email:</strong> ${email}</p>
           <p><strong>Emne:</strong> ${subject}</p>
+
+          <hr/>
+
           <p><strong>Besked:</strong></p>
           <p>${message}</p>
         `
@@ -43,26 +48,24 @@ async function startServer() {
 
       console.log("Mail er sendt succesfuldt via Resend!");
       res.status(200).json({ success: true, message: "Mail sendt korrekt!" });
+
     } catch (error) {
-      console.error("Fejl ved afsendelse af mail hos Resend:", error);
+      console.error("Fejl ved afsendelse af mail:", error);
       res.status(500).json({ success: false, error: "Kunne ikke sende mail" });
     }
   });
 
   // Håndtering af statiske filer og routing
   if (fs.existsSync(distPath)) {
-    // Hvis projektet er bygget (production), serveres de rigtige filer
     app.use(express.static(distPath));
     app.get("*", (_req, res) => {
       res.sendFile(path.join(distPath, "index.html"));
     });
   } else {
-    // Hvis man kører i dev-mode (uden dist mappe), undgår vi crash
     app.get("/", (_req, res) => {
       res.send("Backend kører! Brug din frontend på http://localhost:5173");
     });
-    
-    // Fallback for alle andre sider i dev
+
     app.get("*", (req, res) => {
       if (req.url.startsWith('/api/')) {
         res.status(404).json({ error: "API route findes ikke" });
