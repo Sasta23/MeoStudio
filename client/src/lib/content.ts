@@ -80,7 +80,7 @@ export const portfolioVideos: PortfolioVideo[] = [
     videoUrl: 'https://www.youtube.com/embed/dQw4w9WgXcQ',
     duration: '3:20',
     description: 'Luxury property walkthrough with drone footage',
-  },
+  },/*
   {
     id: 'video-005',
     title: 'Instagram Reel - Coffee',
@@ -98,7 +98,7 @@ export const portfolioVideos: PortfolioVideo[] = [
     videoUrl: 'https://www.youtube.com/embed/dQw4w9WgXcQ',
     duration: '4:00',
     description: 'Emotional wedding day highlights',
-  },
+  },*/
 ];
 
 /**
@@ -153,7 +153,7 @@ export const aboutContent = {
  * Update with your actual contact details
  */
 export const contactInfo = {
-  email: 'MeoStudioDK.gmail.com',
+  email: 'MeoStudioDK@gmail.com',
   phone: '+45 20 93 60 09',
   location: 'Odense, Danmark',
   instagram: 'https://www.instagram.com/meostudiodk/',
