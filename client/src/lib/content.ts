@@ -47,12 +47,12 @@ export interface SocialLink {
 export const portfolioVideos: PortfolioVideo[] = [
   {
     id: 'video-001',
-    title: 'Restaurant Ambiance',
-    category: 'cinematic',
-    thumbnail: '/Videos/toriB.png',
-    videoUrl: '/Videos/Torii.mp4',
-    duration: '2:45',
-    description: 'Cinematic showcase of a fine dining restaurant experience',
+    title: 'Video med resultat 17.6 tusind visninger på tiktok',
+    category: 'social',
+    thumbnail: 'https://img.youtube.com/vi/YW4rChWoXsM/hqdefault.jpg',
+    videoUrl: 'https://www.youtube.com/embed/YW4rChWoXsM',
+    duration: '0:45',
+    description: 'SoMe video med resultat, 17.6 tusind visninger på tiktok',
   },
   {
     id: 'video-002',
